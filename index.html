@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDYPANEL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="tc.png" alt="Tech Crafters">
+            STUDYPANEL
+        </div>
+        <div class="tabs">
+            <button class="tab-button active" data-tab="todo">ToDo</button>
+            <button class="tab-button" data-tab="timer">Timer</button>
+            <button class="tab-button" data-tab="notes">Notes</button>
+        </div>
+    </nav>
+    <div class="container">
+        <div id="todo" class="tab-content active">
+            <h2>📝 ToDo List</h2>
+            <input type="text" id="todo-title" placeholder="Title">
+            <input type="text" id="todo-task" placeholder="Task">
+            <button onclick="todo()">Add ToDo</button>
+            <div id="todo-list" style="margin-top:30px"></div>
+        </div>
+        <div id="timer" class="tab-content">
+            <h2>🕐 Study Timer</h2>
+            <input type="number" id="session-length" placeholder="Session Length (minutes)" min="1">
+            <input type="number" id="break-length" placeholder="Break Time (minutes)" min="1">
+            <button onclick="timer()">Start Timer</button>
+            <div class="timer-display" id="timer-display">00:00</div>
+            <div class="reminder" id="reminder"></div>
+        </div>
+        <div id="notes" class="tab-content">
+            <h2>📃 Notes</h2>
+            <textarea id="note-text" placeholder="Write your note here..."></textarea>
+            <button id="save-note-btn" onclick="note()">Save Note</button>
+            <div id="notes-list" style="margin-top:30px;"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
