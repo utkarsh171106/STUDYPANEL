@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STUDYPANEL</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav>
-        <div class="logo">
-            <img src="tc.png" alt="Tech Crafters">
-            STUDYPANEL
+    <section>
+        <div class="nav1">
+            <div class="logo">
+                <img src="tc.png" alt="Tech Crafters">
+                STUDYPANEL
+            </div>
+            <div class="tabs">
+                <button class="tab-button active" data-tab="todo">ToDo</button>
+                <button class="tab-button" data-tab="timer">Timer</button>
+                <button class="tab-button" data-tab="notes">Notes</button>
+            </div>
         </div>
-        <div class="tabs">
-            <button class="tab-button active" data-tab="todo">ToDo</button>
-            <button class="tab-button" data-tab="timer">Timer</button>
-            <button class="tab-button" data-tab="notes">Notes</button>
-        </div>
-    </nav>
+    </section>
+    <div class="scroll">
     <div class="container">
         <div id="todo" class="tab-content active">
             <h2>📝 ToDo List</h2>
@@ -40,6 +43,7 @@
             <button id="save-note-btn" onclick="note()">Save Note</button>
             <div id="notes-list" style="margin-top:30px;"></div>
         </div>
+    </div>
     </div>
     <script src="script.js"></script>
 </body>
