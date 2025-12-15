@@ -81,3 +81,58 @@ function editNote(btn){
     document.getElementById('note-text').value=textContent.split('\n')[0];
     editingNote=item;
 }
+function isValidUsername(username){
+    return username.trim().length >= 6;
+}
+function isValidPassword(password){
+    const passRegex=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
+    return passRegex.test(password);
+}
+function isValidEmail(email){
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+const loginBtn = document.getElementById('login-btn');
+const signinBtn = document.getElementById('signin-btn');
+if(loginBtn){
+    loginBtn.addEventListener('click',(e)=>{
+    const username=document.getElementById('login-userid').value;
+    const password=document.getElementById('login-password').value;
+    let errors=[];
+    if(!isValidUsername(username)){
+        errors.push('Username must be at least 6 characters.');
+    }
+    if(!isValidPassword(password)){
+        errors.push('Password must have at least 1 lowercase, 1 uppercase, 1 digit and be at least 6 characters.');
+    }
+    if(errors.length){
+        e.preventDefault();
+        alert(errors.join('\n'));
+        location.reload();
+        return;
+    }
+    });
+}
+if(signinBtn){
+    signinBtn.addEventListener('click',(e)=>{
+    const email=document.getElementById('signin-email').value;
+    const username=document.getElementById('signin-userid').value;
+    const password=document.getElementById('signin-password').value;
+    let errors=[];
+    if(!isValidEmail(email)){
+        errors.push('Enter a valid email address.');
+    }
+    if(!isValidUsername(username)){
+        errors.push('Username must be at least 6 characters.');
+    }
+    if(!isValidPassword(password)){
+        errors.push('Password must have at least 1 lowercase, 1 uppercase, 1 digit and be at least 6 characters.');
+    }
+    if(errors.length){
+        e.preventDefault();
+        alert(errors.join('\n'));
+        location.reload();
+        return;
+    }
+    });
+}
