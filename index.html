@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STUDYPANEL</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <section>
@@ -14,15 +14,38 @@
                 STUDYPANEL
             </div>
             <div class="tabs">
-                <button class="tab-button active" data-tab="todo">ToDo</button>
-                <button class="tab-button" data-tab="timer">Timer</button>
-                <button class="tab-button" data-tab="notes">Notes</button>
+                <button class="tab-button" id="tab-button" data-tab="todo">ToDo</button>
+                <button class="tab-button" id="tab-button" data-tab="timer">Timer</button>
+                <button class="tab-button" id="tab-button" data-tab="notes">Notes</button>
             </div>
         </div>
     </section>
     <div class="scroll">
     <div class="container">
-        <div id="todo" class="tab-content active">
+        <div id="login" class="tab-content active">
+            <h2>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/2048px-Default_pfp.svg.png">
+                Log in
+            </h2>
+            <input type="search" id="login-userid" placeholder="User id">
+            <input type="password" id="login-password" placeholder="Password">
+            <p>Don't have an account?<button class="tab-button" id="link" data-tab="signin">Sign in</button></p>
+            <button class="tab-button" id="login-btn" data-tab="todo">Log in</button>
+            <div id="todo-list" style="margin-top:30px"></div>
+        </div>
+        <div id="signin" class="tab-content">
+            <h2>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/2048px-Default_pfp.svg.png">
+                Sign in
+            </h2>
+            <input type="search" id="signin-email" placeholder="Mail id">
+            <input type="search" id="signin-userid" placeholder="User id">
+            <input type="password" id="signin-password" placeholder="Password">
+            <p>Already have an account?<button class="tab-button" id="link" data-tab="login">Log in</button></p>
+            <button class="tab-button" id="signin-btn" type="button" data-tab="todo">Sign in</button>
+            <div id="todo-list" style="margin-top:30px"></div>
+        </div>
+        <div id="todo" class="tab-content">
             <h2>📝 ToDo List</h2>
             <input type="text" id="todo-title" placeholder="Title">
             <input type="text" id="todo-task" placeholder="Task">
@@ -48,4 +71,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
